@@ -41,11 +41,11 @@ console.log(nome1)
 // var funciona em qualquer contexto
 // let funciona apenas no contexto que foi criada
 
-const nome2 = "Pedro" // valor que não muda
-console.log(nome2)
+//const nome2 = "Pedro" // valor que não muda
+//console.log(nome2)
 
-nome2 = "Maria"
-console.log(nome2)
+//nome2 = "Maria"
+//console.log(nome2)
 
 
 
