@@ -64,13 +64,13 @@ if (verificacao) {
 function somar(x, y) {
     return x + y;
 }
-*/
+
 
 // Com arrow function --> () => {}
 const somar = (x, y) => {
     return x + y;
 }
-
+*/
 // Função com apenas um linha pode ser feita assim
 const multiplicar = (x, y) => x * y; //aqui já é o return
 
@@ -169,3 +169,124 @@ function addSquares(a, b) {
 console.log(addSquares(2, 3));
 
 
+// Introdução a Array
+let colors = ['blue', 'red', 'green'];
+
+console.log(colors);
+console.log(colors[0]);
+
+let lista = ['algo', 30, 'blabla', true];
+
+// Array dentro de array
+let nomes = ['nwldo', 'pedro', 'silvia'];
+
+let lista1 = ['blabla', nomes];
+
+let lista2 = ['blabla', ['xx', 'yy']];
+
+console.log(lista2[1][0])
+
+let segundo = lista2[1];
+console.log(segundo[0]); // 'xx'
+
+
+// Operações básicas de array
+let ingredientes = [
+    'agua',
+    'farinha',
+    'ovo',
+    'corante',
+    'sal',
+];
+
+// Dessa forma vai acrescentar um elemento, mas a posição 5 vai ficar vazia
+//ingredientes[6] = 'cebola';
+// Para evitar isso use o push()
+
+ingredientes.push('cebola'); // Adiciona elemento na última posição
+console.log(ingredientes);
+
+// ingredientes.pop() // Remove o último elemento do array
+// ingredientes.shift() // Remove o primeiro elemento do array
+
+console.log(`Total de ingredientes: ${ingredientes.length}`);
+
+
+// O que são objetos?
+/* Um objeto é uma coleção de propriedades, e uma propriedade é uma associação 
+entre um nome (ou chave) e um valor
+
+objeto {
+    propriedade: valor
+}
+*/
+let personagem = {
+    nome: 'Nwldo',
+    idade: 90,
+    pais: 'Brasil',
+}
+
+console.log(personagem);
+console.log(personagem.nome); // Acessar elemento
+
+console.log(`${personagem} tem ${personagem.idade} anos.`);
+
+// Objeto dentro de objeto
+let personagens = {
+    nome: 'Nwldo',
+    idade: 90,
+    pais: 'Brasil',
+    olhos: ['preto', 'azul'],
+    caracteristicas: {
+        forca: 20,
+        magia: 5,
+        stamina: 15
+    }
+}
+ // Acessando elemento
+console.log(personagens.caracteristicas.magia)
+console.log(personagens.olhos[0]);
+
+
+// Acessando e alterando objetos
+personagens.nome = 'Pedro';
+console.log(personagens.nome);
+
+personagens.caracteristicas.forca += 5;
+console.log(`Força: ${personagens.caracteristicas.forca }`);
+
+// Como a propriedade "olhos" é um arry pode chamar o push
+personagens.olhos.push('verde');
+console.log(personagens.olhos);
+
+// Objeto dentro de um array
+let personagens1 = {
+    nome: 'Nwldo',
+    idade: 90,
+    pais: 'Brasil',
+    carros: [
+        {modelo: 'Fiat', cor: 'preto'},
+        {modelo: 'Ferrari', cor: 'vermelho'}
+    ]
+}
+
+console.log(personagens1.carros[1].modelo);
+
+// Função dentro de objeto
+/*
+Para criar função o nome vem primeiro e depois function
+Como a função foi criada dentro do objeto ela tem acesso aos elementos
+através da palavra chave this --> se refere ao própri objeto
+*/
+let pessoa = {
+    nome: 'Nwldo',
+    sobrenome: 'Oliveira',
+    idade: 90,
+    nomeCompleto: function() {
+        return `${this.nome} ${this.sobrenome}`;
+    }
+}
+
+console.log(pessoa.nomeCompleto());
+
+// Usando arrow function --> como ela é anônima (não tem pai) não vai ter acesso aos elementos (this)
