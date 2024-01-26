@@ -16,3 +16,6 @@ console.log(carros);
 // 4. Exiba quantos itens tem array
 console.log('4. itens no array: ');
 
+
+
+

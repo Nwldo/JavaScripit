@@ -1,4 +1,6 @@
-/* 1)
+/* 
+Exercicios de Funções
+1.
 Calcule a prcentagem entre 2 números.
 Exemplo: 25% de 40 é 10
 Fórmula da porcentagem: (y / x) * 100
@@ -14,7 +16,7 @@ console.log(`${pct}% de ${x} é ${y}`);
 
 
 /*
-2)
+2.
 Calcule o preço do imóvel
 - m2 = 3.000
 - Se tiver 1 quarto, o m2 é 1x
@@ -46,3 +48,5 @@ if (validacao) {
     console.log('Acesso NEGADO!');
 }
 
+
+//
