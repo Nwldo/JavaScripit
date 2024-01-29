@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Módulo 3 - Eventos e manipulação de DOM/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>DOM = Document Object Model</h1>
+
+    <p>Document = É responsável pelo conteúdo dentro do documento</p>
+    <p>
+        Selecionar elementos - "document" pelo console <br>
+        "document." irá aparecer as opções
+        <br>
+        "document.getElementsByTagName("h1")" -- getElements - selecionar vários elementos (All, sempre no array)
+        
+    </p>
+
+    <div id="teste">
+        Bla bla bla
+    </div>
+
+    <!-- Selecionar um único elemento
+        document.getElementById("teste")-->
+        
+    <button class="botao">Clique aqui</button>
+
+    <p>
+        document.querySelector("#teste")
+    </p>
+
+    <p>
+        document.querySelector(".botao")
+    </p>
+
+    <p>
+        document.querySelector(".h1")
+    </p>
+
+    <div class="lista">
+        <ul>
+            <li >Item 1</li>
+            <li >Item 2</li>
+        </ul>
+    </div>
+
+    <div class="lista1">
+        <ul>
+            <li>Item 3</li>
+            <li>Ttem 4</li>
+        </ul>
+    </div>
+
+    <p>
+        document.querySelector("li") -- o primeiro que aparecer<br>
+        document.querySelectorAll("li") -- todos li (All, sempre no array)<br>
+        document.querySelector("#teste ul li") --- selecionar um específico
+    </p>
+
+
+    <h1>EVENTOS</h1>
+    <!--<button class="botao" onclick="clicou()">clique aqui</button>-->
+    
+    <button class="botao">Clique aqui</button>
+
+
+    <h1>#5: Manipulando elementos 1</h1>
+
+    <button class="botao1" onclick="clicar()">Clique no botão</button>
+
+    <div id="lista">
+        <ul>
+            <li >Item 1</li>
+            <li >Item 2</li>
+        </ul>
+        <strong>1,2,3..</strong>
+    </div>
+
+
+    
+    <script src="/Módulo 3 - Eventos e manipulação de DOM/script.js"></script>
+</body>
+</html>
