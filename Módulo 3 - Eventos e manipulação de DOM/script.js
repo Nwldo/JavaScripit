@@ -110,6 +110,44 @@ function adicionar() {
 // para adicionar um elementos em vez de texto
 // cria elemento ou pegar o elemento do outro lugar
 
+//Manipulando atributos
 
+function cliqueaqui() {
+    const input = document.querySelector('input');
 
+    //mostrar atributo
+    console.log(input.getAttribute('type'));
+
+    //verificar se existe atributo
+    if(input.hasAttribute('placeholder')) {
+        console.log('Tem placeholder SIM');
+    }else{
+        console.log('Não tem placeholder...');
+    }
+
+    //Adicionar atributo e se tiver vai alterar o atributo
+    /**
+     Define o valor de um atributo no elemento especificado. Se o atributo já existir, o valor será 
+     atualizado; caso contrário, um novo atributo será adicionado com o nome e valor especificados.
+      
+     */
+    input.setAttribute('placeholder', 'Placeholder alterado');
+}
+
+function mostrarsenha() {
+    //Obs como document tem mais de um input tem que especificar pelo ID ou class
+    const psw = document.querySelector('.senha');
+    const botao = document.querySelector('.bnt_botao')
+    //console.log(psw.getAttribute('type'));
+    
+    if (psw.getAttribute('type') === 'text') {
+        psw.setAttribute('type', 'password');
+        botao.innerText = "Mostrar senha";
+    }else {
+        psw.setAttribute('type', 'text');
+        botao.innerText= "Ocultar senha";
+    }
+   
+    
+}
 
