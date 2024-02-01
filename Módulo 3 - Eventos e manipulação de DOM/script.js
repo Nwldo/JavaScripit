@@ -135,7 +135,7 @@ function cliqueaqui() {
 }
 
 function mostrarsenha() {
-    //Obs como document tem mais de um input tem que especificar pelo ID ou class
+    //Obs como document tem mais de um input deve-se especificar pelo ID ou class
     const psw = document.querySelector('.senha');
     const botao = document.querySelector('.bnt_botao')
     //console.log(psw.getAttribute('type'));
@@ -150,4 +150,79 @@ function mostrarsenha() {
    
     
 }
+
+// Manipulando o CSS
+function fazacao (){
+    const li = document.querySelector('.Li');
+
+    //quando a propriedade do css tem traço a partir do segunda palavra fica em caixa alta
+    li.style.backgroundColor = '#00f';
+    //Se não existir no html, é adicionada
+    li.style.fontSize = '20px';
+}
+
+// Trabalhando com Classes
+function classes() {
+    const botao6 = document.querySelector('.botao6');
+
+    //console.log(botao6);
+    //console.log(botao6.classList);
+
+    //botao6.classList.add('verde');
+    //botao6.classList.remove('verde');
+
+    /* 
+    if(botao6.classList.contains('azul')){
+        botao6.classList.remove('azul');
+        botao6.classList.add9('verde');
+    }else{
+        botao6.classList.add('azul');
+        botao6.classList.remove('verde');
+    }*/
+
+    //resumido o codigo acima
+    botao6.classList.toggle('azul');
+
+    if(botao6.classList.contains('azul')){
+        botao6.classList.replace('azul', 'verde');
+    }else{
+        otao6.classList.replace('verde', 'azul');
+    }
+
+}
+
+//Eventos de teclado 1
+function apertou(){
+    
+    //console.log("APERTOU!");
+}
+
+function segurou(){
+    console.log("SEGUROU!");
+}
+
+function soltou(evento){
+    //console.log("SOLTOU!");
+    //console.log(evento.key);
+    console.log(evento.code);
+    //shift apertado
+    console.log('TECLA APERTADA: ' + evento.code);
+    console.log('SHIFT ' + evento.shiftkey);
+    console.log('SHIFT ' + evento.ctrlkey);
+    console.log('SHIFT ' + evento.altkey);
+    console.log('---')
+}
+
+//document.addEventListener('keyup', soltou);
+
+//Eventos de teclado 2 - saber qual tecla foi apertada
+const input = document.querySelector('.input_tecla');
+input.addEventListener('keyup', soltou);
+
+//Exercicio
+function exercio(){
+    const addLista = document.querySelector('.lista6');
+    console.log(addLista);
+}
+
 
