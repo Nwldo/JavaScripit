@@ -219,10 +219,5 @@ function soltou(evento){
 const input = document.querySelector('.input_tecla');
 input.addEventListener('keyup', soltou);
 
-//Exercicio
-function exercio(){
-    const addLista = document.querySelector('.lista6');
-    console.log(addLista);
-}
 
 
