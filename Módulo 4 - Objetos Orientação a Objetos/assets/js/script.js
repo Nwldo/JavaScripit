@@ -1,8 +1,8 @@
 //modelo de uma pessoa
-//classe primeira letra maiuscula
+//classe --> primeira letra maiuscula
 /*
-as classe tem pripriedades e métodos --> para criar as propriedades dessa pessoa
-precisa-se inicializar esse objeto -- construtor
+as classe tem propriedades e métodos --> para criar as propriedades dessa pessoa
+precisa-se inicializar esse objeto pelo construtor
 */
 // classe
 class Person{
@@ -13,7 +13,7 @@ class Person{
     }
 }
 
-// para criar uma pessoa precisa-se instância a classe (ou seja, está pegando o tamplete e criando um objeto)
+// para criar uma pessoa precisa-se instância a classe (ou seja, usa-se um template para criando um objeto)
 let p1 = new Person("João", 20);
 let p2 = new Person("Maria", 30);
 let p3 = new Person("Pedro", 40); // com um template foi criando três pessoas
@@ -50,7 +50,7 @@ class Person2{
         this.name = name;
     }
 
-    takeAstep(){
+    takeAstep(){// métodos
         // para fazer a distinção de pessoas usa-se o this
         this.steps++;
     }
@@ -74,3 +74,64 @@ p8.setAge('sdfdf');
 
 console.log(`Passos de ${p7.name}: ${p7.steps}`);
 console.log(`${p8.name} tem ${p8.age} anos.`);
+
+
+
+//================ #6: Classes: Getter e Setter ============================
+//getter e setter funções que mostra o modifica o valor respectivamente
+
+class Car{
+    _age = 10;
+    doors = 0;
+
+    constructor(firstMarca, lastMarca){
+        this.firstMarca = firstMarca;
+        this.lastMarca = lastMarca;
+    }
+
+    takeDoors(){
+        this.doors++;
+    }
+
+    get fullName(){
+        return `${this.firstMarca} ${this.lastMarca}`;
+    }
+
+    get age(){
+        return this._age;
+    }
+
+    set age(x){
+        if (typeof x == 'number'){
+            this._age = x;
+        }
+    }
+}
+
+let car1 = new Car("Fiat", "Uno");
+
+car1.age = 20;
+
+//console.log(`${car1.firstMarca} ${car1.lastMarca} tem ${car1.age} anos`);// está executando a função
+console.log(`${car1.fullName} tem ${car1.age} anos`);
+
+
+//============== #7: Classes: Herança =======================
+class Person3{
+    age = 0;
+
+    constructor(name){
+        this.name = name;
+    }
+}
+
+class Student extends Person3{// herada as carecteristica classe abstrata (nome e idade)
+    constructor(name, id){ //construtor para inicializar os atributos da classe
+        super(name); //usa-se como função porque estou acessando o construtor da classe pai
+        this.id = id;//o this se refere a própria classe
+    }
+}
+
+let ps = new Student("Nwldo", 1);
+
+console.log(`${ps.name} tem ${ps.age} anos e matrícula ${ps.id}`);
