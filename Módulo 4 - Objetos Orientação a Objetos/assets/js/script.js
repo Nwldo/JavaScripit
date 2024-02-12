@@ -123,6 +123,10 @@ class Person3{
     constructor(name){
         this.name = name;
     }
+
+    sayHi(){
+        console.log(`${this.name} diz oi`);
+    }
 }
 
 class Student extends Person3{// herada as carecteristica classe abstrata (nome e idade)
@@ -130,8 +134,63 @@ class Student extends Person3{// herada as carecteristica classe abstrata (nome 
         super(name); //usa-se como função porque estou acessando o construtor da classe pai
         this.id = id;//o this se refere a própria classe
     }
+
+    sayHi(){
+        console.log(`${this.name} é um estudante e diz OI`) // sobreescrever o métodos e a prioridade: class filho de pois class pai
+    }
+
+    // Executar os métodos da classe pai
+    sayHello(){
+        super.sayHi();
+    }
 }
 
 let ps = new Student("Nwldo", 1);
+ps.age = 20; // tem acesso aos atributos da classe pai
+
+let ps1 = new Student("Pedro", 2);
 
 console.log(`${ps.name} tem ${ps.age} anos e matrícula ${ps.id}`);
+
+//ps.sayHi();
+ps.sayHello();
+
+// ============ Classes: Variável/Método estático =========================
+
+class Animal{
+    static hands = 2; // atributo genérico (geral)
+    age = 2;
+
+    constructor(name){
+        this.name = name;
+    }
+
+    sayHi(){                    //atributo da classe
+        console.log(`OI, eu sou  ${this.name} e tenho ${Animal.hands} mãos`) //Para acessar coloque o nome da classe
+    }
+/** 
+    static sayHi(){
+        console.log(`OI ${this.name}`)// é um método independente, também não posso usar atributos específicos
+    }
+*/
+
+}
+
+Animal.hands = 3; // essa modificação vai ser em todas as pessoas
+
+let a1 = new Animal("Nairobi");
+a1.sayHi();
+
+//======================== Classes: Factory =====================
+//Uma Class Factory é uma função que cria uma estância ou objeto e retorna uma classe.
+function createAnimal(name, age){
+    let a = new Animal(name);
+    a.age = age;
+    return a;
+}
+
+let a2 = createAnimal("Marvia", 90);
+console.log(`${a2.name} tem ${a2.age} anos`);
+
+
+
