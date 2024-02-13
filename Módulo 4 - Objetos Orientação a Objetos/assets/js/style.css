@@ -21,9 +21,14 @@ gap --> divide os elementos igualmente na tela
     background-color: red;
     border-radius: 5px;
 }
-
+/*
+height: inherit; --> herda as propriedades da classe pai
+*/
 .log{
     border: 1px dotted #999;
     height: 200px;
     overflow-y: scroll;
 }
+/*
+overflow-y: scroll; --> barra de rolagem na vertical
+*/
