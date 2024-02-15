@@ -129,7 +129,7 @@ class Person3{
     }
 }
 
-class Student extends Person3{// herada as carecteristica classe abstrata (nome e idade)
+class Student extends Person3{// herda as carecteristica classe abstrata (nome e idade)
     constructor(name, id){ //construtor para inicializar os atributos da classe
         super(name); //usa-se como função porque estou acessando o construtor da classe pai
         this.id = id;//o this se refere a própria classe
@@ -191,6 +191,55 @@ function createAnimal(name, age){
 
 let a2 = createAnimal("Marvia", 90);
 console.log(`${a2.name} tem ${a2.age} anos`);
+
+//============= Objeto ===================
+/* Criando objeto a partir da instrução "const" 
+A constinstrução declara uma variável.
+Variáveis ​​são contêineres para armazenar informações.
+*/
+const name = "Volvo";
+const log = {
+    lista: [],
+
+}
+
+/*
+O push() método adiciona novos itens ao final de um array.
+
+
+React Render HTML
+O objetivo do React é, de várias maneiras, renderizar HTML em uma página da web.
+
+O React renderiza HTML para a página da web usando uma função chamada createRoot()e seu método render().
+
+A createRoot()função recebe um argumento, um elemento HTML.
+
+O objetivo da função é definir o elemento HTML onde um componente React deve ser exibido.
+
+
+O método de renderização
+O render()método é então chamado para definir o componente React que deve ser renderizado.
+
+Exemplo:
+Exiba um parágrafo dentro de um elemento com o id "root":
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<p>Hello</p>);
+
+O resultado é exibido no <div id="root">elemento:
+
+<body>
+  <div id="root"></div>
+</body>
+
+
+*/
+
+
+
+
+
 
 
 

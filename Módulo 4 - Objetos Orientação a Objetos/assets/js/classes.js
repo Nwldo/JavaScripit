@@ -92,7 +92,7 @@ class Stage{ // cenário
         //console.log(`${attacking.name} está atacando ${attacked.name}`);
         // morto --> life igual a zero
         if(attacking.life <= 0 || attacked.life <= 0){
-            console.log('Acatando cachorro morto');
+            log.addmsessage('Alguém tá morto, não pode atacar.');
             return;
         }
             // gera um número aletório -- resultado com 2 casas decimais                         
@@ -104,14 +104,28 @@ class Stage{ // cenário
     
         if(actualAttack > actualDefense){
             attacked.life -= actualAttack;
-            console.log(`${attacking.name} causou ${actualAttack.toFixed(2)} dano ao ${attacked.name}`);
+            log.addmsessage(`${attacking.name} causou ${actualAttack.toFixed(2)} dano ao ${attacked.name}`);
         }else{
-            console.log(`${attacked.name} conseguiu defender...`);
+            log.addmsessage(`${attacked.name} conseguiu defender...`);
         }
 
         this.update();
     }
 }
 
+const log = {
+    list: [],
+    addmsessage(msg){
+        this.list.push(msg);
+        this.render();
+    },
+    render(){
+        const logEl = document.querySelector('.log');
+        logEl.innerHTML = '';
 
+        for(let i in this.list){
+            logEl.innerHTML += `<li>${this.list[i]}</li>`;
+        }
+    }
+}
 
